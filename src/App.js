@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Confetti from "react-confetti"
+import Block from "./components/Block";
+
+
 
 function App() {
+
+  const dices= []
+  for(let i=0;i<10;i++){
+    dices.push(
+      <Block value={Math.floor(Math.random()*6)+1}/>
+    )
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Confetti/>
+    <h1>Tenzies</h1>
+    <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+    <div className="die-container">{dices}</div>
+    <button className="roll-dice" >
+        "Reset Game"
+    </button>
+</main>
   );
 }
 
