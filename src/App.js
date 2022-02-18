@@ -18,7 +18,7 @@ function App() {
 console.log(values)
   const hold =(e ,value, key)=>{
     setValues(prevValues=>{
-      return prevValues.map(p=>p.id===key? {...prevValues[key],held:true} : p)
+      return prevValues.map(p=>p.id===key? {...p,held:!p.held} : p)
     })
   }
   const roll = ()=>{
