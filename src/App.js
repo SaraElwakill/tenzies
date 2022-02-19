@@ -10,7 +10,7 @@ function App() {
   const [tenzies, setTenzies] = React.useState(false)
   const [values, setValues] = React.useState(Array.from({length: 10},(ele, i)=>({id:i,value:randomNumber(6),held:false})))
   const [startTime, setStartTime] = React.useState(null)
-  const bestRecord = JSON.parse(localStorage.getItem("bestRecord")) || {}
+  const bestRecord = JSON.parse(localStorage.getItem("bestRecord")) || {rollCount:0,rollDuration:0}
   let endTime
   let diff
   const [rollRecord ,setRollRecord] = React.useState({rollCount:0,rollDuration:"ccc"})
