@@ -1,9 +1,6 @@
 import React from 'react'
 
 const Block = ({hold, value, id, held}) => {
-
-    console.log(value)
-
     const styles = {
         backgroundColor: held ? "#59E391" : "white"
     }
